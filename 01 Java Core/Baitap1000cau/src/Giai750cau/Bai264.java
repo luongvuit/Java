@@ -1,0 +1,90 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Giai750cau;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Hoang Anh
+ */
+public class Bai264 {
+
+    public static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {   
+        float[] a = null;
+        float[] b = null;
+        float[] c = null;
+ 
+        System.out.println("---Nhập mảng a---");
+        a = input(a);
+        System.out.println("---Nhập mảng b---");
+        b = input(b);         
+        // trộn mảng a và b thành c
+        c = merge(a, b);         
+        // in mảng c ra màn hình
+        show(c);
+    }
+    public static float[] input(float[] arr) {
+        System.out.print("Nhập số phần tử của mảng: ");
+        int n = scan.nextInt();
+        // khởi tạo arr
+        arr = new float[n];
+        System.out.print("Nhập các phần tử của mảng: \n");
+        for (int i = 0; i < n; i++) {
+            System.out.printf("a[%d] = ", i);
+            arr[i] = scan.nextInt();
+        }
+        return arr;
+    }
+    public static void sortASC(float [] arr) {
+        float temp;
+        for (int i = 0 ; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+    }
+     
+    // tron mang a va mang b
+    public static float[] merge(float[] a, float[] b) {
+        int aIndex = a.length - 1;
+        int bIndex = b.length - 1;
+        int cIndex = a.length + b.length - 1;
+        float[] c = new float[cIndex + 1];
+         
+        // sắp xếp các mảng theo thứ tự tăng dần
+        sortASC(a);
+        sortASC(b);
+         
+        // trộn mảng a và b thành c
+        for (int i = cIndex; i > -1; i--) {
+            if (aIndex > -1 && bIndex > -1) {
+                if (a[aIndex] > b[bIndex]) {
+                    c[i] = a[aIndex--];
+                } else {
+                    c[i] = b[bIndex--];
+                }
+            } else if (bIndex == -1) {
+                c[i] = a[aIndex--];
+            } else if (aIndex == -1) {
+                c[i] = b[bIndex--];
+            }
+        }
+        return c;
+    }
+    public static void show(float[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+

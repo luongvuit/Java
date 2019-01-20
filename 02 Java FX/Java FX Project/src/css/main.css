@@ -1,0 +1,20 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-image:url("../img/back.jpg");
+}
+
+#anPane{
+	-fx-background-image:url("../img/back.jpg");
+	-fx-background-size:cover ;	
+}
+
+#register{
+	-fx-background-color:#E8E9EC;
+}
+
+#login{
+	-fx-background-color:#2D3B55;
+}
