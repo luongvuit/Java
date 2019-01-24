@@ -1,0 +1,19 @@
+.mainFxmlClass {
+    -fx-background-image:url("../img/background.jpg");
+}
+
+.imLogin{
+    -fx-background-color: #4d94ff;
+}
+
+.cssUsername{
+    
+}
+
+.cssPassword{
+    
+}
+
+.LoginButton{
+    
+}

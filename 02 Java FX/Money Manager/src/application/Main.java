@@ -32,47 +32,39 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package config;
+package application;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 /**
  *
  * @author LUONG VU TECHNOLOGY
  */
-public class Config {
-    String configdriver = "com.mysql.jdbc.Driver";
-    String username = "";
-    String password = "";
-    String configconnection = "";
+public class Main extends Application {
 
-    public String getConfigdriver() {
-        return configdriver;
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/Views/Login.fxml"));
+                Scene scene = new Scene(root, 400, 530);
+                primaryStage.setResizable(false);
+                primaryStage.setScene(scene);
+                primaryStage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void setConfigdriver(String configdriver) {
-        this.configdriver = configdriver;
+    public static void main(String[] args) {
+        launch(args);
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getConfigconnection() {
-        return configconnection;
-    }
-
-    public void setConfigconnection(String configconnection) {
-        this.configconnection = configconnection;
-    }
 }
