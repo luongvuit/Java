@@ -34,7 +34,6 @@
  */
 package controllers;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -60,9 +59,6 @@ public class LoginController implements Initializable {
 
     @FXML
     private JFXPasswordField password;
-    
-    @FXML
-    private JFXButton login;
 
     /**
      * Initializes the controller class.
