@@ -34,6 +34,7 @@
  */
 package controllers;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -43,6 +44,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import lib.Database;
 import lib.MD5;
 import models.User;
@@ -60,6 +66,12 @@ public class LoginController implements Initializable {
     @FXML
     private JFXPasswordField password;
 
+    @FXML
+    private Button login;
+
+    @FXML
+    private Button register;
+
     /**
      * Initializes the controller class.
      *
@@ -73,18 +85,33 @@ public class LoginController implements Initializable {
 
     @FXML
     void Login(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
-        
+
         MD5 md = new MD5();
         User us = new User(username.getText(), md.md5(password.getText()));
-        
+
         if (checkLogin(us) == 0) {
             System.out.println("Login Fail!!!");
             //((Node).getSource().getScene().getWindow().hide());
-        }
-        else{
+        } else {
             System.out.println("Welcome to....");
+            login.getScene().getWindow().hide();
+
+            Stage home = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/Views/HomePage.fxml"));
+            home.setScene(new Scene(root));
+            home.show();
         }
-              
+
+    }
+
+    @FXML
+    void Register(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
+        login.getScene().getWindow().hide();
+
+        Stage home = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/Register.fxml"));
+        home.setScene(new Scene(root));
+        home.show();
     }
 
     private int checkLogin(User user) throws SQLException {

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="530.0" maxWidth="400.0" minHeight="530.0" minWidth="400.0" prefHeight="530.0" prefWidth="400.0" styleClass="mainFxmlClass" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane maxHeight="530.0" maxWidth="400.0" minHeight="530.0" minWidth="400.0" prefHeight="530.0" prefWidth="400.0" styleClass="mainFxmlClass" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imLogin">
          <image>
@@ -36,7 +36,7 @@
             <Font name="Times New Roman Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="50.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="160.0" styleClass="LoginButton" stylesheets="@../css/main.css" text="Register">
+      <Button fx:id="register" layoutX="50.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Register" prefHeight="35.0" prefWidth="160.0" styleClass="LoginButton" stylesheets="@../css/main.css" text="Register">
          <font>
             <Font name="Times New Roman Bold Italic" size="18.0" />
          </font>

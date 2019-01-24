@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="600.0" style="-fx-background-color: #253243;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterController">
+   <children>
+      <Label layoutX="68.0" layoutY="45.0" text="SignUp" textFill="#afbccd">
+         <font>
+            <Font name="Century Gothic" size="21.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="fullname" focusColor="#afbccd" layoutX="58.0" layoutY="148.0" maxWidth="368.0" minWidth="368.0" prefHeight="31.0" prefWidth="368.0" unFocusColor="#afbccd">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="password" focusColor="#afbccd" layoutX="58.0" layoutY="222.0" maxWidth="400.0" minWidth="368.0" prefHeight="31.0" prefWidth="368.0" unFocusColor="#afbccd">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXTextField fx:id="email" focusColor="#afbccd" layoutX="58.0" layoutY="308.0" maxWidth="368.0" minWidth="304.0" prefHeight="31.0" prefWidth="368.0" unFocusColor="#afbccd">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="71.0" layoutY="122.0" text="Full name" textFill="#afbccd">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="282.0" text="Email" textFill="#afbccd">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="197.0" text="Password" textFill="#afbccd">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXCheckBox fx:id="check" checkedColor="#30d6c0" layoutX="62.0" layoutY="369.0" prefHeight="17.0" prefWidth="355.0" text="I agree with your terms and condition" textFill="#4b5461">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXButton fx:id="signup" layoutX="72.0" layoutY="427.0" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #30d6c0;" text="SignUp" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="login" layoutX="227.0" layoutY="427.0" onAction="#goLogin" prefHeight="39.0" prefWidth="121.0" style="-fx-border-color: #30d6c0;" text="Login" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
